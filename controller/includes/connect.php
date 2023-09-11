@@ -1,12 +1,25 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = NULL;
-    $dbname = "kedai_jawir";
+class myConnection
+{
+    private $hostname = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $db_name = "kedai_jawir";
+    private $conn;
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+    public function __construct()
+    {
+        // buat koneksi ke database
+        $this->conn = new mysqli($this->hostname, $this->username, $this->password, $this->db_name);
 
+        //check koneksi
+        if ($this->conn->connect_error) {
+            die("Koneksi gagal: " . $this->conn->connect_error);
+        }
+    }
 
-if(!$conn) {
-    die ("koneksi gagal :" .mysqli_connect_error());
+    public function getConnection()
+    {
+        return $this->conn;
+    }
 }

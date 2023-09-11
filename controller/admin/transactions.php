@@ -1,19 +1,9 @@
 <?php
 require "../includes/functions.php";
 
-// GET DATAS //
-
-$query = "SELECT transactions.transaction_id, 
-                 transactions.date,
-                 transactions.amount_items, 
-                 transactions.total_price,
-                 products.product_name, 
-                FROM products
-                INNER JOIN transactions
-                ON products.products_id = transactions.product_id
-                ORDER BY transactions.transaction_id ASC";
-
-$result = getData($query);
+// SHOW DATAS //
+$result = fetchTransaction();
+//--------------//
 
 ?>
 
@@ -34,16 +24,32 @@ $result = getData($query);
                 <!-- SHOW DATA -->
                 <table border="1">
                     <tr>
-                        <th>No </th>
+                        <th>Transaction Id</th>
+                        <th>Customer Name</th>
                         <th>Product Name </th>
-                        <th>Price </th>
+                        <th>Date</th>
+                        <th>Amount Items </th>
+                        <th>Price</th>
+                        <th>Total Price </th>
                     </tr>
 
                     <?php foreach ($result as $row) : ?>
                         <tr>
-                            <td><?php echo $row['product_id']?></td>
+                            <td><?php echo $row['transaction_id']?></td>
+                            <td>
+                                <?php echo $row['customer_name'] ?>
+                            </td>
                             <td>
                                 <?php echo $row['product_name'] ?>
+                            </td>
+                            <td>
+                                <?php echo $row['date'] ?>
+                            </td>
+                            <td>
+                                <?php echo $row['amount_items'] ?>
+                            </td>
+                            <td>
+                                <?php echo $row['price'] ?>
                             </td>
                             <td>
                                 <?php echo $row['total_price'] ?>

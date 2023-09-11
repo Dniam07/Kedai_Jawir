@@ -3,11 +3,11 @@ require '../includes/functions.php';
 
 
 // SHOW DATAS //
-$result = fetchProduct();
+$result = fetchCustomer();
 //--------------//
 
 // increment number //
-    $i = 1;
+$i = 1;
 //--------------//
 ?>
 
@@ -34,20 +34,24 @@ $result = fetchProduct();
                         <th>No </th>
                         <th>Product Name </th>
                         <th>Price </th>
+                        <th>Email </th>
                     </tr>
 
                     <?php foreach ($result as $row) : ?>
                         <tr>
                             <td><?= $i++ ?></td>
                             <td>
-                                <?php echo $row['product_name'] ?>
+                                <?php echo $row['customer_name'] ?>
                             </td>
                             <td>
-                                <?php echo $row['price'] ?>
+                                <?php echo $row['address'] ?>
+                            </td>
+                            <td>
+                                <?php echo $row['email'] ?>
                             </td>
                         </tr>
-                        <?php endforeach; ?>
-                    </table>
+                    <?php endforeach; ?>
+                </table>
             </div>
         </div>
     </div>
