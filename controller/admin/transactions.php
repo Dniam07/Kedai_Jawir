@@ -1,23 +1,21 @@
 <?php
-require '../includes/functions.php';
-
+require "../includes/functions.php";
 
 // GET DATAS //
-$query = "SELECT * FROM products";
+
+$query = "SELECT transactions.transaction_id, 
+                 transactions.date,
+                 transactions.amount_items, 
+                 transactions.total_price,
+                 products.product_name, 
+                FROM products
+                INNER JOIN transactions
+                ON products.products_id = transactions.product_id
+                ORDER BY transactions.transaction_id ASC";
+
 $result = getData($query);
 
-// increment number //
-    $i = 1;
-
-
-
-
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,16 +41,16 @@ $result = getData($query);
 
                     <?php foreach ($result as $row) : ?>
                         <tr>
-                            <td><?= $i++ ?></td>
+                            <td><?php echo $row['product_id']?></td>
                             <td>
                                 <?php echo $row['product_name'] ?>
                             </td>
                             <td>
-                                <?php echo $row['price'] ?>
+                                <?php echo $row['total_price'] ?>
                             </td>
                         </tr>
-                        <?php endforeach; ?>
-                    </table>
+                    <?php endforeach; ?>
+                </table>
             </div>
         </div>
     </div>
