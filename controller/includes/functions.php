@@ -14,6 +14,7 @@ function getDatas($query)
     }
     return $rows;
 }
+
 function fetchProduct()
 {
     global $getConnect;
@@ -58,6 +59,8 @@ function fetchTransaction()
     }
     return $rows;
 }
+
+
 
 
 ?>
