@@ -1,4 +1,5 @@
 <?php
+
 require '../includes/actions.php';
 
 
@@ -49,7 +50,7 @@ $i = 1;
                                 <td>
                                     <?php echo $row['price'] ?>
                                 </td>
-                                <td>
+                                
                                 <td>
                                     <div class="action-buttons">
                                         <a href="?delete_id=<?php echo $row['product_id'] ?>" class="action-button delete-button" onclick="return confirm('ARE YOU SURE?')">Delete</a>
@@ -58,7 +59,7 @@ $i = 1;
                                 </td>
 
 
-                                </td>
+                                
                             </tr>
                         <?php endforeach; ?>
 
@@ -86,6 +87,8 @@ $i = 1;
 
                 </div>
 
+                 <?php if (isset($_SESSION['edit'])) : ?>
+
                 <div class="content-editForm">
 
                     <form action="" method="post">
@@ -108,6 +111,7 @@ $i = 1;
 
 
                 </div>
+                <?php endif; ?>
 
 
             </div>

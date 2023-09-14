@@ -1,4 +1,5 @@
 <?php
+
 require 'functions.php';
 global $getConnect;
 
@@ -37,15 +38,20 @@ if (isset($_GET['edit_id'])) {
          $getId = getDatas("SELECT * FROM products WHERE product_id = $productEdit_id")['0'];
         }
     }
+    
+
+if (isset($_GET['edit_id'])) {
+    $_SESSION['edit'] = true;
+}
 
 if (isset($_POST['editProduct'])) {
     $result = updateProduct();
     if ($result > 0) {
         header("location:?edit-successful");
-        
-   
+        unset($_SESSION['edit']);
     }
 }
+
 
 
 
