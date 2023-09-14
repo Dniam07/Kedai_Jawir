@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 class myConnection
 {
     private $hostname = "localhost";
