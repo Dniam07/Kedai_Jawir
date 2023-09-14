@@ -1,20 +1,24 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/logo_kedaiJawir.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles/home.css">
-    <title> Selamat Datang di KedaiJawir </title>
-</head>
-
-<body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="images/logo_kedaiJawir.png" type="image/x-icon">
+        <link rel="stylesheet" href="view/styles/home.css">
+        <title> Selamat Datang di KedaiJawir </title>
+    </head>
+    
+    <body>
     <div class="container">
 
-    <!-- CONTAINER UNTUK ATUR NAVBAR -->
+        <!-- CONTAINER UNTUK ATUR NAVBAR -->
         <div class="container_navbar">
             <div class="wrapper_navbar">
                 <div class="wrapper_logoImage">
@@ -37,13 +41,13 @@
         </div>
 
 
-    <!-- CONTAINER UNTUK ATUR BAGIAN CONTENT -->
+        <!-- CONTAINER UNTUK ATUR BAGIAN CONTENT -->
         <div class="container_content">
             ini content
         </div>
 
 
-    <!-- CONTAINER UNTUK ATUR BAGIAN FOOTER-->
+        <!-- CONTAINER UNTUK ATUR BAGIAN FOOTER-->
 
         <div class="container_footer">
         </div>
