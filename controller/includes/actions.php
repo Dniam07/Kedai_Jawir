@@ -39,7 +39,7 @@ if (isset($_GET['edit_id'])) {
         }
     }
     
-
+// SESSION FOR EDIT // 
 if (isset($_GET['edit_id'])) {
     $_SESSION['edit'] = true;
 }
@@ -50,6 +50,9 @@ if (isset($_POST['editProduct'])) {
         header("location:?edit-successful");
         unset($_SESSION['edit']);
     }
+}
+if (isset($_GET['delete_id'])) {
+    unset($_SESSION['edit']);
 }
 
 

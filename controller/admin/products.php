@@ -50,7 +50,7 @@ $i = 1;
                                 <td>
                                     <?php echo $row['price'] ?>
                                 </td>
-                                
+
                                 <td>
                                     <div class="action-buttons">
                                         <a href="?delete_id=<?php echo $row['product_id'] ?>" class="action-button delete-button" onclick="return confirm('ARE YOU SURE?')">Delete</a>
@@ -59,7 +59,7 @@ $i = 1;
                                 </td>
 
 
-                                
+
                             </tr>
                         <?php endforeach; ?>
 
@@ -87,30 +87,30 @@ $i = 1;
 
                 </div>
 
-                 <?php if (isset($_SESSION['edit'])) : ?>
+                <?php if (isset($_SESSION['edit'])) : ?>
 
-                <div class="content-editForm">
+                    <div class="content-editForm">
 
-                    <form action="" method="post">
-                        <ul class="form-mobil">
-                            <li>
-                                <input type="text" name="edit_id" id="edit_id" value="<?= $getId['product_id'] ?>">
-                            </li>
-                            <li>
-                                <input type="text" name="productName" id="productName" autocomplete="off" value="<?= $getId['product_name']; ?>" required>
-                            </li>
+                        <form action="" method="post">
+                            <ul class="form-mobil">
+                                <li>
+                                    <input type="text" name="edit_id" id="edit_id" value="<?= $getId['product_id'] ?>" readonly>
+                                </li>
+                                <li>
+                                    <input type="text" name="productName" id="productName" autocomplete="off" value="<?= $getId['product_name']; ?>" required>
+                                </li>
 
-                            <li>
-                                <input type="text" name="price" id="price" autocomplete="off" value="<?= $getId['price']; ?>" required>
-                            </li>
+                                <li>
+                                    <input type="text" name="price" id="price" autocomplete="off" value="<?= $getId['price']; ?>" required>
+                                </li>
 
-                        </ul>
-                        <button type="submit" name="editProduct" class="edit-form">Edit</button>
+                            </ul>
+                            <button type="submit" name="editProduct" class="edit-form">Edit</button>
 
-                    </form>
+                        </form>
 
 
-                </div>
+                    </div>
                 <?php endif; ?>
 
 
